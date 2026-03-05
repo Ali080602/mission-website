@@ -36,7 +36,7 @@
             <div class="mobile-menu-icon" id="menu-icon">
                 <i class="fas fa-bars"></i>
             </div>
-            
+
             <ul class="nav-menu">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">About Us</a></li>
@@ -72,22 +72,23 @@
 
         </nav>
     </header>
+
     <script>
         const menuIcon = document.getElementById('menu-icon');
         const navMenu = document.querySelector('.nav-menu');
         const icon = menuIcon.querySelector('i');
-    
+
         menuIcon.addEventListener('click', () => {
-            // Toggle the visibility of the menu
+            // Toggle the menu visibility class
             navMenu.classList.toggle('show-menu');
             
-            // Swap the icon
+            // Swap between hamburger and X icon
             if(navMenu.classList.contains('show-menu')){
                 icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times'); // Show X when menu is open
+                icon.classList.add('fa-times');
             } else {
                 icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');  // Show bars when menu is closed
+                icon.classList.add('fa-bars');
             }
         });
     </script>
