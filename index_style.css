@@ -39,6 +39,9 @@
             align-items: center;
             padding: 15px 5%;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            /* Add these two lines to fix the hidden menu bug: */
+            position: relative; 
+            z-index: 9999; 
         }
 
         /* Logo Section */
@@ -600,3 +603,27 @@
             .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
         }
+
+       /* ==========================================
+           SCROLL ANIMATIONS
+           ========================================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delays for grid cards to animate one by one */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+        .delay-7 { transition-delay: 0.7s; }
+        .delay-8 { transition-delay: 0.8s; }
