@@ -251,3 +251,352 @@
                 display: block;
             }
         }
+
+       /* ==========================================
+           UTILITIES & BASE STYLES
+           ========================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .text-light { color: #fff !important; }
+        
+        .section-subtitle {
+            display: block;
+            color: #1a4231;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #111;
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background-color: #f1b325;
+            color: #111;
+        }
+        .btn-primary:hover { background-color: #e0a31d; }
+        
+        .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+        .btn-outline:hover { background-color: #fff; color: #111; }
+
+        .btn-outline-dark {
+            border-color: #1a4231;
+            color: #1a4231;
+        }
+        .btn-outline-dark:hover { background-color: #1a4231; color: #fff; }
+
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Add your image here */
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(26, 66, 49, 0.9) 0%, rgba(26, 66, 49, 0.6) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 800px;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(241, 179, 37, 0.2);
+            color: #f1b325;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid #f1b325;
+        }
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        /* ==========================================
+           NOTICE BAR
+           ========================================== */
+        .notice-bar {
+            background-color: #f1b325;
+            color: #111;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+        }
+        .notice-bar a {
+            color: #111;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* ==========================================
+           STATS SECTION
+           ========================================== */
+        .stats-section {
+            margin-top: -40px; /* Pulls it up over the notice bar slightly */
+            position: relative;
+            z-index: 5;
+            margin-bottom: 60px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid #f1b325;
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card i {
+            font-size: 2.5rem;
+            color: #1a4231;
+            margin-bottom: 15px;
+        }
+        .stat-card h3 { font-size: 2rem; color: #111; margin-bottom: 5px; }
+        .stat-card p { color: #666; font-size: 0.9rem; }
+
+        /* ==========================================
+           ABOUT SECTION
+           ========================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .about-image { position: relative; }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .year-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: #1a4231;
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 4px solid #f1b325;
+        }
+        .year-badge span { display: block; font-size: 0.9rem; opacity: 0.8;}
+        .year-badge strong { font-size: 2rem; font-family: Georgia, serif;}
+
+        /* ==========================================
+           FACILITIES SECTION
+           ========================================== */
+        .facilities-section {
+            background-color: #1a4231;
+            color: #fff;
+        }
+        .facilities-section .section-subtitle { color: #f1b325; }
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .facility-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: background 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .facility-card:hover { background: rgba(255, 255, 255, 0.1); }
+        .facility-card i {
+            font-size: 2rem;
+            color: #f1b325;
+            margin-bottom: 20px;
+        }
+        .facility-card h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .facility-card p { color: #d1d1d1; font-size: 0.9rem; line-height: 1.6; }
+
+        /* ==========================================
+           WHY CHOOSE US SECTION
+           ========================================== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .features-list i { color: #1a4231; margin-top: 3px;}
+        
+        .why-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .w-stat {
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .w-stat i { font-size: 2.5rem; margin-bottom: 15px; }
+        .w-stat h3 { font-size: 2.2rem; margin-bottom: 5px; }
+        .bg-green { background-color: #1a4231; }
+        .bg-green i { color: #f1b325; }
+        .bg-yellow { background-color: #f1b325; color: #111; }
+        .bg-yellow i { color: #1a4231; }
+
+        /* ==========================================
+           CTA SECTION
+           ========================================== */
+        .cta-section { background-color: #f4f7f6; }
+        .cta-section h2 { font-family: Georgia, serif; font-size: 2.5rem; margin-bottom: 15px;}
+        .cta-section p { color: #555; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;}
+        .cta-buttons { display: flex; justify-content: center; gap: 15px; }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: #112d21;
+            color: #ddd;
+            padding-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-logo { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: #fff;}
+        .footer-logo .logo-icon {
+            background: #fff; color: #1a4231;
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; font-size: 1.2rem;
+        }
+        .footer-logo h3 { font-family: Georgia, serif; font-size: 1.3rem; margin-bottom: 2px;}
+        .footer-logo p { font-size: 0.7rem; letter-spacing: 1px; }
+        .footer-desc { font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+        
+        .social-links a {
+            display: inline-flex; justify-content: center; align-items: center;
+            width: 35px; height: 35px; border-radius: 50%;
+            background: rgba(255,255,255,0.1); color: #fff; text-decoration: none;
+            margin-right: 10px; transition: background 0.3s;
+        }
+        .social-links a:hover { background: #f1b325; color: #111; }
+        
+        .footer-col h4 { color: #fff; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid #f1b325; padding-bottom: 10px; display: inline-block;}
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul a { color: #ddd; text-decoration: none; transition: color 0.3s; font-size: 0.95rem;}
+        .footer-col ul a:hover { color: #f1b325; }
+        
+        .contact-col p { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;}
+        .contact-col i { color: #f1b325; margin-top: 4px; }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* ==========================================
+           RESPONSIVE ADJUSTMENTS
+           ========================================== */
+        @media screen and (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .why-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero { text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .features-list { grid-template-columns: 1fr; }
+            .stats-section { margin-top: 20px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+        }
