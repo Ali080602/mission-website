@@ -1,0 +1,74 @@
+.tpo_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(16, 98, 34);
+    color: white;
+    height: 30px;
+
+    .top_contact a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        display: flex-end;
+        margin-right: 20px;
+
+        &:hover {
+            text-decoration: wavy underline;
+            color: yellow;
+        }
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .company_name {
+        margin-left: 20px;
+    }
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    color: rgb(0, 62, 12);
+    display: flex;
+    align-items: center;
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+        display: flex;
+
+        p{
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        li {
+            margin: 0 15px;
+
+            a {
+                color: rgb(1, 63, 16);
+                text-decoration: none;
+                font-size: 18px;
+
+                &:hover {
+                    text-decoration: wavy underline;
+                    color: yellow;
+                }
+            }
+        }
+    }
+}   
