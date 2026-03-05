@@ -1,151 +1,3 @@
-/* --- Mobile Menu Icon (Hidden on Desktop) --- */
-.mobile-menu-icon {
-    display: none;
-    font-size: 1.5rem;
-    color: #1a4231;
-    cursor: pointer;
-}
-
-/* --- Responsive Media Queries --- */
-/* --- Responsive Media Queries (Triggering earlier to prevent squishing) --- */
-@media screen and (max-width: 1200px) {
-    .top-bar {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-        padding: 10px;
-    }
-
-    .mobile-menu-icon {
-        display: block; 
-    }
-
-    .cta-btn {
-        display: none; 
-    }
-
-    .main-header {
-        position: relative;
-    }
-
-    /* THE FIX: Hidden by default */
-    .nav-menu {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        padding: 0;
-        z-index: 1000;
-    }
-
-    /* THE FIX: Class added by JS to show the menu */
-    .nav-menu.show-menu {
-        display: flex;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        text-align: left;
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-menu a.active {
-        border-radius: 0; 
-    }
-
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        display: none; 
-        transform: none;
-        padding-left: 20px;
-        background-color: #f9f9f9;
-    }
-
-    .nav-menu li:hover .dropdown-menu {
-        display: block;
-    }
-}
-    /* Show the hamburger icon */
-    .mobile-menu-icon {
-        display: block; 
-    }
-
-    /* Hide the Apply Now button on mobile to save space (optional) */
-    .cta-btn {
-        display: none; 
-    }
-
-    /* Make the main header relative to position the dropdown menu */
-    .main-header {
-        position: relative;
-    }
-
-    /* Restyle the nav menu for mobile (hidden by default) */
-    .nav-menu {
-        display: none; /* Hidden until toggled via JavaScript */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        padding: 10px 0;
-        z-index: 1000;
-    }
-
-    /* Class added by JS to show the menu */
-    .nav-menu.show-menu {
-        display: flex;
-    }
-
-    /* Adjust list items and links for vertical layout */
-    .nav-menu li {
-        width: 100%;
-        text-align: left;
-    }
-
-    .nav-menu a {
-        display: block;
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-menu a.active {
-        border-radius: 0; /* Remove pill shape on mobile */
-    }
-
-    /* Adjust submenus for mobile (static positioning) */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        display: none; /* Hidden initially on mobile */
-        transform: none;
-        padding-left: 20px;
-        background-color: #f9f9f9;
-    }
-
-    /* Simple hover approach for mobile submenus (tap to open) */
-    .nav-menu li:hover .dropdown-menu {
-        display: block;
-    }
-}
-
-
 /* --- General Reset --- */
         * {
             margin: 0;
@@ -155,12 +7,12 @@
         }
 
         body {
-            background-color: #f4f4f4; /* Just for contrast against the white header */
+            background-color: #f4f4f4; 
         }
 
         /* --- Top Bar --- */
         .top-bar {
-            background-color: #1a4231; /* Deep green */
+            background-color: #1a4231;
             color: #ffffff;
             display: flex;
             justify-content: space-between;
@@ -212,7 +64,7 @@
         .logo-text h1 {
             color: #111;
             font-size: 1.4rem;
-            font-family: Georgia, 'Times New Roman', Times, serif; /* Serif font matching the image */
+            font-family: Georgia, 'Times New Roman', Times, serif;
             margin-bottom: 2px;
         }
 
@@ -223,7 +75,7 @@
             text-transform: uppercase;
         }
 
-        /* Navigation Menu */
+        /* Navigation Menu (Desktop) */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -232,23 +84,22 @@
         }
 
         .nav-menu li {
-            position: relative; /* Needed for dropdown positioning */
+            position: relative; 
         }
 
         .nav-menu a {
-           text-decoration: none;
-           color: #666;
-           font-size: 1rem;
-           padding: 8px 12px;
-           transition: all 0.3s ease;
-           white-space: nowrap; /* ADD THIS LINE: Prevents text from wrapping */
-}
+            text-decoration: none;
+            color: #666;
+            font-size: 1rem;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+            white-space: nowrap; /* Prevents awkward text wrapping */
+        }
 
         .nav-menu a:hover {
             color: #1a4231;
         }
 
-        /* Active 'Home' Button styling */
         .nav-menu a.active {
             background-color: #1a4231;
             color: #ffffff;
@@ -256,7 +107,7 @@
             padding: 8px 20px;
         }
 
-        /* --- Dropdown Submenu Styling --- */
+        /* Dropdown Submenus (Desktop) */
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -274,7 +125,6 @@
             z-index: 100;
         }
 
-        /* Show dropdown on hover */
         .nav-menu li:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
@@ -297,26 +147,107 @@
             color: #1a4231;
         }
 
-        /* Dropdown indicator arrow */
         .has-dropdown > a::after {
-            content: '\f107'; /* FontAwesome down arrow */
+            content: '\f107';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             margin-left: 6px;
             font-size: 0.8rem;
         }
 
-        /* CTA Button */
         .cta-btn {
-            background-color: #f1b325; /* Yellow/Orange */
+            background-color: #f1b325;
             color: #111;
             text-decoration: none;
             font-weight: bold;
             padding: 10px 24px;
             border-radius: 8px;
             transition: background-color 0.3s ease;
+            white-space: nowrap;
         }
 
         .cta-btn:hover {
             background-color: #e0a31d;
+        }
+
+        /* --- Mobile Menu Icon (Hidden on Desktop) --- */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            color: #1a4231;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           RESPONSIVE MEDIA QUERIES (Mobile/Tablet)
+           ========================================= */
+        @media screen and (max-width: 1080px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+                padding: 10px;
+            }
+
+            .mobile-menu-icon {
+                display: block; 
+            }
+
+            .cta-btn {
+                display: none; 
+            }
+
+            .main-header {
+                position: relative;
+            }
+
+            /* The Menu Container - Hidden by default securely */
+            .nav-menu {
+                display: none !important; /* Force hide */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                padding: 0;
+                z-index: 1000;
+            }
+
+            /* The Menu Container - Shown when toggled */
+            .nav-menu.show-menu {
+                display: flex !important; /* Force show */
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: left;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-menu a.active {
+                border-radius: 0; 
+            }
+
+            /* Dropdowns adjust for mobile */
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                display: none; 
+                transform: none;
+                padding-left: 20px;
+                background-color: #f9f9f9;
+            }
+
+            .nav-menu li:hover .dropdown-menu {
+                display: block;
+            }
         }
