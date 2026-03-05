@@ -1,3 +1,90 @@
+/* --- Mobile Menu Icon (Hidden on Desktop) --- */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    color: #1a4231;
+    cursor: pointer;
+}
+
+/* --- Responsive Media Queries --- */
+@media screen and (max-width: 992px) {
+    /* Stack the top bar */
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    /* Show the hamburger icon */
+    .mobile-menu-icon {
+        display: block; 
+    }
+
+    /* Hide the Apply Now button on mobile to save space (optional) */
+    .cta-btn {
+        display: none; 
+    }
+
+    /* Make the main header relative to position the dropdown menu */
+    .main-header {
+        position: relative;
+    }
+
+    /* Restyle the nav menu for mobile (hidden by default) */
+    .nav-menu {
+        display: none; /* Hidden until toggled via JavaScript */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    /* Class added by JS to show the menu */
+    .nav-menu.show-menu {
+        display: flex;
+    }
+
+    /* Adjust list items and links for vertical layout */
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu a.active {
+        border-radius: 0; /* Remove pill shape on mobile */
+    }
+
+    /* Adjust submenus for mobile (static positioning) */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        display: none; /* Hidden initially on mobile */
+        transform: none;
+        padding-left: 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* Simple hover approach for mobile submenus (tap to open) */
+    .nav-menu li:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
 /* --- General Reset --- */
         * {
             margin: 0;
@@ -88,12 +175,13 @@
         }
 
         .nav-menu a {
-            text-decoration: none;
-            color: #666;
-            font-size: 1rem;
-            padding: 8px 12px;
-            transition: all 0.3s ease;
-        }
+           text-decoration: none;
+           color: #666;
+           font-size: 1rem;
+           padding: 8px 12px;
+           transition: all 0.3s ease;
+           white-space: nowrap; /* ADD THIS LINE: Prevents text from wrapping */
+}
 
         .nav-menu a:hover {
             color: #1a4231;
