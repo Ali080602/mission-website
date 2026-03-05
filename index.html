@@ -73,22 +73,21 @@
         </nav>
     </header>
     <script>
-        // Grab the icon and the menu
         const menuIcon = document.getElementById('menu-icon');
         const navMenu = document.querySelector('.nav-menu');
+        const icon = menuIcon.querySelector('i');
     
-        // Toggle the 'show-menu' class when the icon is clicked
         menuIcon.addEventListener('click', () => {
+            // Toggle the visibility of the menu
             navMenu.classList.toggle('show-menu');
             
-            // Optional: Change hamburger to an 'X' icon when open
-            const icon = menuIcon.querySelector('i');
+            // Swap the icon
             if(navMenu.classList.contains('show-menu')){
                 icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+                icon.classList.add('fa-times'); // Show X when menu is open
             } else {
                 icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                icon.classList.add('fa-bars');  // Show bars when menu is closed
             }
         });
     </script>
