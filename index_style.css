@@ -1,74 +1,173 @@
-.tpo_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgb(16, 98, 34);
-    color: white;
-    height: 30px;
-
-    .top_contact a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        display: flex-end;
-        margin-right: 20px;
-
-        &:hover {
-            text-decoration: wavy underline;
-            color: yellow;
-        }
-
-        img{
-            width: 20px;
-            height: 20px;
-        }
-    }
-
-    .company_name {
-        margin-left: 20px;
-    }
-}
-
-.navbar {
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    color: rgb(0, 62, 12);
-    display: flex;
-    align-items: center;
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        margin-right: 20px;
-        display: flex;
-
-        p{
+/* --- General Reset --- */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-    }
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-
-        li {
-            margin: 0 15px;
-
-            a {
-                color: rgb(1, 63, 16);
-                text-decoration: none;
-                font-size: 18px;
-
-                &:hover {
-                    text-decoration: wavy underline;
-                    color: yellow;
-                }
-            }
+        body {
+            background-color: #f4f4f4; /* Just for contrast against the white header */
         }
-    }
-}   
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background-color: #1a4231; /* Deep green */
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            font-size: 0.95rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar-right i {
+            margin-right: 5px;
+        }
+
+        /* --- Main Navigation Bar --- */
+        .main-header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Logo Section */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: #1a4231;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .logo-text h1 {
+            color: #111;
+            font-size: 1.4rem;
+            font-family: Georgia, 'Times New Roman', Times, serif; /* Serif font matching the image */
+            margin-bottom: 2px;
+        }
+
+        .logo-text p {
+            color: #777;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-menu li {
+            position: relative; /* Needed for dropdown positioning */
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #666;
+            font-size: 1rem;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #1a4231;
+        }
+
+        /* Active 'Home' Button styling */
+        .nav-menu a.active {
+            background-color: #1a4231;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 8px 20px;
+        }
+
+        /* --- Dropdown Submenu Styling --- */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            list-style: none;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        /* Show dropdown on hover */
+        .nav-menu li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+            color: #1a4231;
+        }
+
+        /* Dropdown indicator arrow */
+        .has-dropdown > a::after {
+            content: '\f107'; /* FontAwesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: 6px;
+            font-size: 0.8rem;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background-color: #f1b325; /* Yellow/Orange */
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #e0a31d;
+        }
