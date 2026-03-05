@@ -7,7 +7,11 @@
 }
 
 body {
-    background-color: #f4f4f4; 
+    background-color: #f4f4f4;    
+}
+header {
+    position: relative;
+    z-index: 99999; /* Ensures the entire header block is on top */
 }
 
 /* --- Top Bar --- */
@@ -211,9 +215,9 @@ body {
         left: 0;
         width: 100%;
         background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Slightly larger shadow for depth */
         padding: 0;
-        z-index: 1000;
+        z-index: 99999; /* BOOSTED Z-INDEX */
     }
 
     .nav-menu.show-menu {
