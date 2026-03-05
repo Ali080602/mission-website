@@ -7,8 +7,8 @@
 }
 
 /* --- Responsive Media Queries --- */
-@media screen and (max-width: 992px) {
-    /* Stack the top bar */
+/* --- Responsive Media Queries (Triggering earlier to prevent squishing) --- */
+@media screen and (max-width: 1200px) {
     .top-bar {
         flex-direction: column;
         text-align: center;
@@ -16,6 +16,67 @@
         padding: 10px;
     }
 
+    .mobile-menu-icon {
+        display: block; 
+    }
+
+    .cta-btn {
+        display: none; 
+    }
+
+    .main-header {
+        position: relative;
+    }
+
+    /* THE FIX: Hidden by default */
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 0;
+        z-index: 1000;
+    }
+
+    /* THE FIX: Class added by JS to show the menu */
+    .nav-menu.show-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu a.active {
+        border-radius: 0; 
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        display: none; 
+        transform: none;
+        padding-left: 20px;
+        background-color: #f9f9f9;
+    }
+
+    .nav-menu li:hover .dropdown-menu {
+        display: block;
+    }
+}
     /* Show the hamburger icon */
     .mobile-menu-icon {
         display: block; 
