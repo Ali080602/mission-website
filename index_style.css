@@ -374,9 +374,11 @@ header {
 .notice-bar {
     background-color: #f1b325;
     color: #111;
-    padding: 12px 0;
+    /* 20px top, 0 sides, 60px bottom to make room for the overlapping cards */
+    padding: 20px 0 60px 0; 
     text-align: center;
     font-weight: 500;
+    font-size: 0.95rem;
 }
 .notice-bar a {
     color: #111;
@@ -388,9 +390,9 @@ header {
     STATS SECTION
    ========================================== */
 .stats-section {
-    margin-top: -40px; 
+    margin-top: -40px; /* Pulls the cards up over the yellow bar */
     position: relative;
-    z-index: 5;
+    z-index: 10; /* Ensures cards stay on top */
     margin-bottom: 60px;
 }
 .stats-grid {
@@ -598,6 +600,19 @@ header {
     .stats-section { margin-top: 20px; }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+}
+@media screen and (max-width: 768px) {
+    /* ... your other mobile rules ... */
+
+    /* Reset the notice bar so it's normal size on phones */
+    .notice-bar {
+        padding: 15px 10px; 
+    }
+    
+    /* Push the stats section down so it doesn't overlap on phones */
+    .stats-section {
+        margin-top: 30px; 
+    }
 }
 
 /* ==========================================
