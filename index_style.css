@@ -325,7 +325,7 @@ header {
    ========================================== */
 .hero {
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-image: url('https://homebase-hostel-hub.lovable.app/assets/hero-school-Dv2j_kcw.jpg');
     background-size: cover;
     background-position: center;
     min-height: 80vh;
@@ -374,8 +374,8 @@ header {
 .notice-bar {
     background-color: #f1b325;
     color: #111;
-    /* 20px top, 0 sides, 60px bottom to make room for the overlapping cards */
-    padding: 20px 0 60px 0; 
+    /* 20px top, 0 sides, 20px bottom to make room for the overlapping cards */
+    padding: 20px 0 20px 0; 
     text-align: center;
     font-weight: 500;
     font-size: 0.95rem;
@@ -389,10 +389,13 @@ header {
 /* ==========================================
     STATS SECTION
    ========================================== */
+/* ==========================================
+    STATS SECTION
+   ========================================== */
 .stats-section {
-    margin-top: -40px; /* Pulls the cards up over the yellow bar */
+    margin-top: 50px; /* FIX: Changed from -40px to 50px to push it below the notice bar */
     position: relative;
-    z-index: 10; /* Ensures cards stay on top */
+    z-index: 5;
     margin-bottom: 60px;
 }
 .stats-grid {
