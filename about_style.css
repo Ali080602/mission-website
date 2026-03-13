@@ -1,0 +1,143 @@
+/* ==========================================
+   ABOUT US PAGE STYLES
+   ========================================== */
+
+/* Page Header Banner */
+.page-header-banner {
+    background-color: #1a4231;
+    padding: 80px 20px;
+    border-bottom: 5px solid #f1b325;
+}
+.page-title {
+    font-size: 3rem;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+.page-desc {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Background Utility */
+.bg-light {
+    background-color: #fafafa;
+}
+.mt-4 {
+    margin-top: 40px;
+}
+
+/* Who We Are Section */
+.who-we-are-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.who-text p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+.who-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Reusable Icon Box */
+.icon-box {
+    background-color: #fdf5e6; /* Very light yellow */
+    color: #f1b325; /* Dark yellow/gold */
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Mission & Vision Section */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.mv-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.mv-card h3 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    color: #111;
+    margin-bottom: 15px;
+}
+.mv-card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Core Values Section */
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+.value-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #f1b325;
+}
+.value-card h4 {
+    font-size: 1.3rem;
+    color: #111;
+    margin-bottom: 10px;
+}
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments for new grids */
+@media screen and (max-width: 992px) {
+    .who-we-are-grid, 
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .core-values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .core-values-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-title {
+        font-size: 2.2rem;
+    }
+}
